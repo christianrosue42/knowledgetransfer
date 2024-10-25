@@ -1,3 +1,0 @@
-### Ansprechpartner
-Andreas Carlsen
-

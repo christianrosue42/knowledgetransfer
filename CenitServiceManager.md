@@ -1,4 +1,5 @@
 # Cenit Service Manager
+admin admin
 
 - "Framework für kundenspezifische Services"
 - Integrationsplattform (Basis-Komponente)
@@ -11,3 +12,6 @@ ISR:
 - Helge Schneider
 - Dirk ? - Product Owner?
 
+### Technologie
+#### Java
+Vers 11

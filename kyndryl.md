@@ -6,7 +6,7 @@ das neue Paket muss die Anpassungen von ISR Release 1.2.2.7 und 1.2.2.9 enthalte
 
 ### Ansprechpartner
 ISR:
-Bernward Ketteler
-Lambert Jünck
+Bernward Ketteler,
+Lambert Jünck,
 Viola Lachmann (Entwicklerin)
 

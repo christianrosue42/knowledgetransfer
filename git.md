@@ -30,3 +30,17 @@ Navigate to your repository in the command line and issue the following commands
 
 ```git remote -v```
 
+## To check your Git SSL configuration, you can run:
+
+```git config --global --get http.sslBackend```
+
+## change git remote url
+```git remote set-url origin https://<AccessToken>@isrdevtools02.isr.local/<namespcace>/<RepoName>.git```
+
+
+## Learning: oauth in url !
+https://dev.to/fpeluso/how-to-clone-a-gitlab-repository-after-enabling-2fa-6oc
+
+``` git clone https://oauth:<AccessToken>@isrdevtools02.isr.local/<namespcace>/<RepoName>.git```
+
+git clone https://<AccessToken>@isrdevtools02.isr.local/<namespcace>/<RepoName>.git

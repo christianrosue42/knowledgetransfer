@@ -28,4 +28,5 @@ Get-ChildItem -Path "C:\DEV\Projects\kyndryl" -Filter "run.bat" -Recurse
 ##### forward search output to a file
 (in this case: filter the folder for .jar files and store them in a markdown file)
 
-```Get-ChildItem -Path "C:\DEV\Projects\kyndryl" -Filter "*.jar" -Recurse | Out-File -FilePath "kyryl_dependencies.md```
+```Get-ChildItem -Path "C:\DEV\Projects\kyndryl" -Filter "*.jar" -Recurse | Out-File -FilePath "kyryl_dependencies.md"```
+

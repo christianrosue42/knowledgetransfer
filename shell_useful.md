@@ -18,7 +18,8 @@ unzip RREEFGermany-develop.zip -d C:\DEV\Projects\kyndryl
 
 ```unzip file.zip```
 
-### search for a file
+## search 
+### file
 #### powershell
 (Recurse option is used to search in all subdirectories)
 
@@ -30,3 +31,13 @@ Get-ChildItem -Path "C:\DEV\Projects\kyndryl" -Filter "run.bat" -Recurse
 
 ```Get-ChildItem -Path "C:\DEV\Projects\kyndryl" -Filter "*.jar" -Recurse | Out-File -FilePath "kyryl_dependencies.md"```
 
+### file contents
+#### powershell
+##### Search for a specific string in a file:
+```Select-String -Path "path/to/your/file.txt" -Pattern "searchString"```
+
+##### Search for a specific string in all files within a directory:
+```Select-String -Path "path/to/your/directory/*" -Pattern "searchString"```
+
+##### Search for a specific string recursively in all files within a directory and its subdirectories:
+```Select-String -Path "path/to/your/directory/*" -Pattern "searchString" -Recurse```

@@ -44,3 +44,20 @@ https://dev.to/fpeluso/how-to-clone-a-gitlab-repository-after-enabling-2fa-6oc
 ``` git clone https://oauth:<AccessToken>@isrdevtools02.isr.local/<namespcace>/<RepoName>.git```
 
 git clone https://<AccessToken>@isrdevtools02.isr.local/<namespcace>/<RepoName>.git
+
+### Delete commit (Attention)
+Careful: 
+git reset --hard 
+WILL DELETE YOUR WORKING DIRECTORY CHANGES. Be sure to stash any local changes you want to keep before running this command.
+
+Assuming you are sitting on that commit, then this command will wack it...
+
+``` git reset --hard HEAD~1 ```
+The HEAD~1 means the commit before head.
+
+Or, you could look at the output of git log, find the commit id of the commit you want to back up to, and then do this:
+
+```git reset --hard <sha1-commit-id>```
+If you already pushed it, you will need to do a force push to get rid of it...
+
+```git push origin HEAD --force```

@@ -5,4 +5,7 @@ Instead of writing shell commands, the configuration files are **XML-based**
 
 cross-platform
 
-uses [apache ivy](https://ant.apache.org/ivy/) for [dependency management]()
+### Documentation
+[Apache Ant - Documentation](https://ant.apache.org/manual/index.html)
+
+uses [apache ivy](/Apache_Ivy.md) for [dependency management]()

@@ -2,6 +2,10 @@
 
 ```cd /mnt/c/```
 
+### File creation
+(PowerShell)
+```New-Item -Path "C:\path\to\your\file.txt" -ItemType "file"```
+New-Item -Path "C:\Users\christian.rosue\Documents\Notes\Pax_logger.md" -ItemType "file"
 ### check file permissions
 ```dir -lr```
 

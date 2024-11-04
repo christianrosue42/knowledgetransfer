@@ -1,6 +1,10 @@
 ## [OSGi](https://docs.osgi.org/)
 https://www.osgi.org/resources/where-to-start/
 
+### OSGi und OSGi Blueprint
+http://www.osgi.org/Specifications
+
+
 **Open Service Gateway Initiative** is a modular approach and specification that allows developers to create robust, highly **decoupled** and dynamic applications in Java.
 
 #### [fragments]()

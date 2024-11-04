@@ -9,6 +9,7 @@ needs to be stored in IVY_CONF_HOME or user.home
 
 powershell:
 ```$env:IVY_CONF_HOME = "C:\path\to\your\ivyhome"```
+$env:IVY_CONF_HOME = "C:\DEV\Tools\Apache\ivy_conf_home"
 
 #### ivy.rep.dir: 
 This variable specifies the directory where Ivy will look for its **repository files**. 

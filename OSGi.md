@@ -1,4 +1,6 @@
 ## [OSGi](https://docs.osgi.org/)
+<img src="img_osgi_logo.png" alt="osgi logo" width="200"/>
+
 https://www.osgi.org/resources/where-to-start/
 
 ### OSGi und OSGi Blueprint

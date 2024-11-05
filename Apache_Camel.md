@@ -1,4 +1,6 @@
 # Apache Camel
+<img src="img_camel_logo.png" alt="drawing" width="200"/>
+
 ### [Documentation](https://camel.apache.org/docs/)
 #### What is Camel?
 **regelbasierte Routing- und Messaging-Engine**

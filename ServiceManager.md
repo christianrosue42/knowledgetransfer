@@ -4,11 +4,29 @@ setzt [enterprise Integration Patterns (EIP)](/EIP_Enterprise_Integration_Patter
 
 ## Architektur
 ### Technologien 
-- [Apache Karaf](/Apache_Karaf.md)
-- [Apache Camel](/Apache_Camel.md)
-- CARISMA
+- Servicemanager
+    - [Quartz](Quartz.md)
+    - [Spring](Spring.md)
 
-![alt text](image-5.png)
+- [Apache Karaf](/Apache_Karaf.md)
+    - [OSGi](OSGi.md)
+    - [OSGi Blueprint](OSGi_Blueprint.md)
+        - [Apache Aries](Apache_Aries.md)
+
+- [Apache Camel](/Apache_Camel.md)
+    - [Spring](Spring.md)
+
+- [CARISMA](Carisma.md)
+    - [CENIT Content Framework](CENIT_Content_Framework.md)
+    - [CENIT Searchmanager](CENIT_Searchmanager.md)
+
+unterstützt allerdings nur [Apache Felix](Apache_Felix.md) als **OSGi Container**
+
+<img src="image-6.png" alt="drawing" width="600"/>
+
+<img src="image-5.png" alt="drawing" width="600"/>
+
+<img src="img_servicemanager_bundles.png" alt="drawing" width="600"/>
 
 ### Starten von SM
 Starten Sie den SERVICEMANAGER mit der Datei <SM>/bin/SERVICEMANAGER.bat

@@ -1,5 +1,7 @@
 # Apache Karaf
-OSGi-basierte Laufzeitumgebung für Serverapplikationen
+<img src="img_karaf_logo.png" alt="osgi logo" width="200"/>
+
+**OSGi-basierte Laufzeitumgebung für Serverapplikationen**
 
 #### [Documentation](https://karaf.apache.org/documentation.html)
 
@@ -7,5 +9,5 @@ OSGi-basierte Laufzeitumgebung für Serverapplikationen
 können und in dem sie selbst verwaltet werden. 
 
 - Apache Karaf selbst ist kein OSGi-Container. 
-- Es kann zwischen den OSGI-Container **[Apache Felix]() und [Eclipse Equinox]() umgeschaltet werden. 
+- Es kann zwischen den OSGI-Container **[Apache Felix](Apache_Felix.md) und [Eclipse Equinox]() umgeschaltet werden. 
 Der [**SERVICEMANAGER**](/ServiceManager.md) unterstützt allerdings **nur Apache Felix**.

@@ -5,7 +5,7 @@
 
 
 #### allow unsecure repos from http
-##### add this mirror to ~/.m2/settings.xml
+##### add this mirror to ~\Maven\apache-maven-3.9.9\conf\settings.xml
 ```
 <!-- allow downloading from your insecure repository by uncommenting this mirror -->
 	<mirror>

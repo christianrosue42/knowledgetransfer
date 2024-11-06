@@ -29,4 +29,6 @@ unterstützt allerdings nur [Apache Felix](Apache_Felix.md) als **OSGi Container
 <img src="img_servicemanager_bundles.png" alt="drawing" width="600"/>
 
 ### Starten von SM
-Starten Sie den SERVICEMANAGER mit der Datei <SM>/bin/SERVICEMANAGER.bat
+C:\ServiceManager\servicemanager-4.4.3-202406171825\bin
+ - open console and run ./start.bat
+- open http://servicemanager-host:8181 Url (localhost)

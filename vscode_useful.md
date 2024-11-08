@@ -9,3 +9,6 @@ https://code.visualstudio.com/docs/java/java-refactoring
 
 ## open folder from powershell
 ```Start-Process -WindowStyle Hidden code . ```
+
+## mehrere nicht zusammenhängende Zeilenanfänge markieren
+Halten Sie die Alt-Taste gedrückt (Windows)

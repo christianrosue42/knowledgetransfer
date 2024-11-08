@@ -1,9 +1,9 @@
 # Define the search string and the replacement string
-$searchString = '<camel:log'
-$replacementString = '<log'
+$searchString = '<setHeader headerName='
+$replacementString = '<setHeader name='
 
 # Read the XML file contents
-$xmlFilePath = "C:\DEV\Projects\DZPrivat_Services_Compare_tmp\FileNet_Export_Service_update.xml"
+$xmlFilePath = "C:\DEV\Projects\DZPrivat_Services_Compare_tmp\FileNet_Import_Service_update.xml"
 $xmlContent = Get-Content -Path $xmlFilePath
 
 # Initialize an array to store the modified XML lines

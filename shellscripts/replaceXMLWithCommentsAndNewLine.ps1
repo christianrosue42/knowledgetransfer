@@ -3,7 +3,7 @@ $searchString = '<setHeader headerName='
 $replacementString = '<setHeader name='
 
 # Read the XML file contents
-$xmlFilePath = "C:\DEV\Projects\DZPrivat_Services_Compare_tmp\FileNet_Import_Service_update.xml"
+$xmlFilePath = "C:\DEV\Projects\DZPrivat_Services_Compare_tmp\update_choice_list_service.xml"
 $xmlContent = Get-Content -Path $xmlFilePath
 
 # Initialize an array to store the modified XML lines

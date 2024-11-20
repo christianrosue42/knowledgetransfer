@@ -15,3 +15,12 @@ ISR:
 ### Technologie
 #### Java
 Vers 11
+
+### start service manager
+./start.bat
+
+### start sm client 
+./client.bat -u <username>
+
+### show log (only Errors)
+log:tail | grep ERROR

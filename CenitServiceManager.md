@@ -12,10 +12,13 @@ ISR:
 - Helge Schneider
 - Dirk ? - Product Owner?
 
-### Technologie
+## Technologie
 #### Java
 Vers 11
+Karaf
+Camel
 
+## commands
 ### start service manager
 ./start.bat
 
@@ -24,3 +27,25 @@ Vers 11
 
 ### show log (only Errors)
 log:tail | grep ERROR
+
+### show datasources (db etc)
+jdbc:ds-list
+
+### show Services
+service:list
+
+service:list DataSourceFactory
+
+### show features
+feature:list
+
+feature:list | grep camel
+
+### feature install
+feature:install <featurename>
+
+### featur repo 
+feature:repo-list
+
+### bundle in karaf deployen (bash)
+cp <pathtobundle>.jar(.xml etc) $KARAF_HOME/deploy

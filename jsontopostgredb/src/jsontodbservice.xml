@@ -1,0 +1,58 @@
+<blueprint  xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
+ 			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ 			xsi:schemaLocation="http://www.osgi.org/xmlns/blueprint/v1.0.0
+ 				https://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd
+ 				http://camel.apache.org/schema/blueprint
+				http://camel.apache.org/schema/blueprint/camel-blueprint-3.18.xsd">
+
+
+    <!-- Define the DBCP DataSource bean for PostgreSQL -->
+    <bean id="myDataSource" class="org.apache.commons.dbcp2.BasicDataSource">
+        <property name="url" value="jdbc:postgresql://localhost:5432/postgres"/>
+        <property name="username" value="postgres"/>
+        <property name="password" value="mysecretpassword"/>
+        <property name="driverClassName" value="org.postgresql.Driver"/>
+    </bean>
+
+    <import resource="file:${karaf.etc}/services/service-base.xml" />
+
+    <manifest xmlns="http://karaf.apache.org/xmlns/deployer/blueprint/v1.0.0">
+        <![CDATA[
+             Cenit-Service-Id=jsontodbservice
+             Cenit-Service-Name=jsontodbservice test
+             Bundle-Version=1.0.0
+            ]]>
+    </manifest>
+
+    <camelContext id="jsontodbservice" useMDCLogging="true" autoStartup="true" xmlns="http://camel.apache.org/schema/blueprint">
+        <propertyPlaceholder location="file:${karaf.etc}/jsontodbservice.cfg" />
+        <route id="jsonToDbRoute">
+            <from uri="file:C:/ServiceManager/servicemanager-4.4.3-202406171825/data/input/json?delete=true&amp;delay=5000" />
+            <log message="File picked up: ${header.CamelFileName}" loggingLevel="INFO"/>
+
+            <!-- Unmarshal the JSON to a POJO (Plain Old Java Object) -->
+            <unmarshal>
+                <json library="Jackson" />
+            </unmarshal>
+            <log message="JSON unmarshalled: ${body}" loggingLevel="INFO"/>
+
+            <setBody>
+                <simple>
+                    INSERT INTO users (name, email)
+                    VALUES ('${body[name]}', '${body[email]}')
+                </simple>
+            </setBody>
+            <log message="Processed SQL Query: ${body}" loggingLevel="INFO"/>
+
+            <doTry>
+                <to uri="jdbc:myDataSource" />
+                <doCatch>
+                    <exception>java.lang.Exception</exception>
+                    <log message="Exception in Service ${bean:service.getId}: ${exception.message} - ${exception.stacktrace}" loggingLevel="DEBUG" />
+                </doCatch>
+            </doTry>
+        </route>
+    </camelContext>
+
+
+</blueprint>

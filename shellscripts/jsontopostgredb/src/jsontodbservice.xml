@@ -6,13 +6,18 @@
 				http://camel.apache.org/schema/blueprint/camel-blueprint-3.18.xsd">
 
 
-    <!-- Define the DBCP DataSource bean for PostgreSQL -->
+    <!-- Define the DBCP DataSource bean for PostgreSQL directly -->
+    <!--
     <bean id="myDataSource" class="org.apache.commons.dbcp2.BasicDataSource">
         <property name="url" value="jdbc:postgresql://localhost:5432/postgres"/>
         <property name="username" value="postgres"/>
         <property name="password" value="mysecretpassword"/>
         <property name="driverClassName" value="org.postgresql.Driver"/>
     </bean>
+    -->
+
+    <!-- reference postgresql DB to DataSource instead of a local bean - Datasource needs to be externally registered in Karaf-Container -->
+    <reference id="myDataSource" interface="javax.sql.DataSource" filter="(dataSourceName=import)" />
 
     <import resource="file:${karaf.etc}/services/service-base.xml" />
 
@@ -25,9 +30,8 @@
     </manifest>
 
     <camelContext id="jsontodbservice" useMDCLogging="true" autoStartup="true" xmlns="http://camel.apache.org/schema/blueprint">
-        <propertyPlaceholder location="file:${karaf.etc}/jsontodbservice.cfg" />
         <route id="jsonToDbRoute">
-            <from uri="file:C:/ServiceManager/servicemanager-4.4.3-202406171825/data/input/json?delete=true&amp;delay=5000" />
+            <from uri="file:{{jsonfile.path}}?delete=true&amp;delay=5000" />
             <log message="File picked up: ${header.CamelFileName}" loggingLevel="INFO"/>
 
             <!-- Unmarshal the JSON to a POJO (Plain Old Java Object) -->
@@ -36,13 +40,22 @@
             </unmarshal>
             <log message="JSON unmarshalled: ${body}" loggingLevel="INFO"/>
 
-            <setBody>
-                <simple>
-                    INSERT INTO users (name, email)
-                    VALUES ('${body[name]}', '${body[email]}')
-                </simple>
-            </setBody>
-            <log message="Processed SQL Query: ${body}" loggingLevel="INFO"/>
+            <!-- process each item in the json file -->
+            <split>
+                <simple>${body}</simple>
+
+                <setBody>
+                    <simple>
+                        INSERT INTO users (name, email)
+                        VALUES ('${body[name]}', '${body[email]}')
+                    </simple>
+                </setBody>
+
+                <log message="Processed SQL Query: ${body}" loggingLevel="INFO"/>
+
+
+                <to uri="jdbc:myDataSource" />
+            </split>
 
             <doTry>
                 <to uri="jdbc:myDataSource" />

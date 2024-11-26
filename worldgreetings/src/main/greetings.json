@@ -1,0 +1,46 @@
+{
+  "greetings": [
+    {
+      "language": "English",
+      "greeting": "Hello",
+      "country": "United States",
+      "formal": false
+    },
+    {
+      "language": "Spanish",
+      "greeting": "Hola",
+      "country": "Spain",
+      "formal": false
+    },
+    {
+      "language": "French",
+      "greeting": "Bonjour",
+      "country": "France",
+      "formal": true
+    },
+    {
+      "language": "German",
+      "greeting": "Guten Tag",
+      "country": "Germany",
+      "formal": true
+    },
+    {
+      "language": "Japanese",
+      "greeting": "こんにちは",
+      "country": "Japan",
+      "formal": true
+    },
+    {
+      "language": "Chinese",
+      "greeting": "你好",
+      "country": "China",
+      "formal": false
+    },
+    {
+      "language": "Russian",
+      "greeting": "Здравствуйте",
+      "country": "Russia",
+      "formal": true
+    }
+  ]
+}
